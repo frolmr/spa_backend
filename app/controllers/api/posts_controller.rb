@@ -2,17 +2,17 @@ module Api
   class PostsController < ApplicationController
     before_action :set_post, only: [:show, :update, :destroy]
     def index
-      render json: Post.all.to_json
+      render json: Post.all
     end
 
     def show
-      render json: @post.to_json
+      render json: @post
     end
 
     def create
       @post = Post.new(post_params)
       if @post.save
-        render json: @post.to_json
+        render json: @post
       else
         render json: { errors: @post.errors, status: :unprocessable_entity }
       end
@@ -20,7 +20,7 @@ module Api
 
     def update
       if @post.update(post_params)
-        render json: @post.to_json
+        render json: @post
       else
         render json: { errors: @post.errors, status: :unprocessable_entity }
       end
