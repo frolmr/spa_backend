@@ -1,0 +1,14 @@
+first:
+  title: 'test_first'
+  body: 'this is body for test_first fixture'
+  username: 'test_user'
+
+second:
+  title: 'test_second'
+  body: 'this is body for test_second fixture'
+  username: 'test_user'
+
+third:
+  title: 'test_third'
+  body: 'this is body for test_third fixture'
+  username: 'vasya'
