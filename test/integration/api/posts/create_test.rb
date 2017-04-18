@@ -16,12 +16,10 @@ class PostsCreateTest < ActionDispatch::IntegrationTest
                                          body: body,
                                          username: username } }
     created_post = Post.last
-    assert_equal title, created_post.title
-    assert_equal body, created_post.body
-    assert_equal username, created_post.username
+    assert_equal [title, body, username], [created_post.title, created_post.body, created_post.username]
   end
 
-  test 'create action should increae number of post records' do
+  test 'create action should increase number of post records' do
     assert_difference 'Post.count', 1 do
       post '/api/posts', params: { post: { title: 'star_wars',
                                            body: 'May the Force be with you',
