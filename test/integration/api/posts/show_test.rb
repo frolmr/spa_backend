@@ -4,7 +4,7 @@ class PostsShowTest < ActionDispatch::IntegrationTest
   setup do
     @response_body = Post.first
     @fields_array = [:id, :title, :body, :username]
-    get "/api/posts/#{@response_body.id}"
+    get "/api/posts/#{@response_body.id}", headers: authenticated_header
   end
 
   test 'show action should return correct status on request' do
