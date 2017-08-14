@@ -4,7 +4,7 @@ class PostsUpdateTest < ActionDispatch::IntegrationTest
   setup do
     @post = Post.last
     @new_title = 'New title'
-    put "/api/posts/#{@post.id}", params: { post: { title: @new_title } }
+    put "/api/posts/#{@post.id}", headers: authenticated_header, params: { post: { title: @new_title } }
   end
 
   test 'update action should return correct status on request' do

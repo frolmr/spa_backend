@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PostsIndexTest < ActionDispatch::IntegrationTest
   setup do
-    get '/api/posts'
+    get '/api/posts', headers: authenticated_header
   end
 
   test 'index action should return correct status on request' do
