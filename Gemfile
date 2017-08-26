@@ -13,6 +13,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rack-cors'
 gem 'knock'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platform: :mri
