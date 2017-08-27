@@ -14,6 +14,7 @@ gem 'puma', '~> 3.0'
 gem 'rack-cors'
 gem 'knock'
 gem 'kaminari'
+gem 'pg_search'
 
 group :development, :test do
   gem 'byebug', platform: :mri
