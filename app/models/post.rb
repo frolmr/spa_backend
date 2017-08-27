@@ -1,11 +1,14 @@
 class Post < ApplicationRecord
+  mount_uploader :image, PostImageUploader
+
   include PgSearch
+
   pg_search_scope :search_by_title,
                   against: :title,
                   using: { tsearch: { prefix: true, any_word: true } }
 
-  def self.processing(page_number, sort_method, query_string)
-    result_posts = get_posts_by_params(page_number, sort_method, query_string)
+  def self.get_according_request(page_number, sort_method, query_string)
+    result_posts = get_by_params(page_number, sort_method, query_string)
     total_pages = result_posts.page(1).total_pages
     {
       posts: result_posts,
@@ -13,7 +16,7 @@ class Post < ApplicationRecord
     }
   end
 
-  def self.get_posts_by_params(page_number, sort_method, query_string)
+  def self.get_by_params(page_number, sort_method, query_string)
     sort_methods = [:created_at]
     method_chain = []
     method_chain << [:page, page_number] if page_number ||= 1

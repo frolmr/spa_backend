@@ -15,6 +15,7 @@ gem 'rack-cors'
 gem 'knock'
 gem 'kaminari'
 gem 'pg_search'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug', platform: :mri
