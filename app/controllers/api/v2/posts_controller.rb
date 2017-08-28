@@ -2,8 +2,9 @@ module Api
   module V2
     class PostsController < PostsBaseController
       def index
-        page_number, sort_method, query_string = params.values_at(:page, :order, :query)
-        render json: Post.get_according_request(page_number, sort_method, query_string)
+        result = Post.page(params[:page]).order(params[:order])
+        result = result.search_by_title(params[:query]) if params[:query]
+        render json: { posts: result, total_pages: result.total_pages }
       end
 
       def create
