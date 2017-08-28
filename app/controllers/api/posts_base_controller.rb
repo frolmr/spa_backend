@@ -1,7 +1,8 @@
 module Api
-  class PostsController < ApplicationController
+  class PostsBaseController < ApplicationController
     before_action :authenticate_user
     before_action :set_post, only: [:show, :update, :destroy]
+
     def index
       render json: Post.all
     end
@@ -38,7 +39,7 @@ module Api
     end
 
     def post_params
-      params.require(:post).permit(:id, :title, :body, :username)
+      params.require(:post).permit(:title, :body, :username)
     end
   end
 end

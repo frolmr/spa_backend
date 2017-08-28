@@ -8,9 +8,7 @@ class ActiveSupport::TestCase
 
   def authenticated_header
     token = Knock::AuthToken.new(payload: { sub: users(:one).id  }).token
-    {
-      'Authorization': "Bearer #{token}"
-    }
+    "Bearer #{token}"
   end
   # Add more helper methods to be used by all tests here...
 end
