@@ -20,7 +20,7 @@ module V2
 
     test 'index response should return correct ammount of pages' do
       get '/api/posts', headers: { 'Authorization': authenticated_header }
-      assert_equal @last_page_number, JSON.parse(response.body)['total_pages']
+      assert_equal @last_page_number, JSON.parse(response.body)['pages']['total_pages']
     end
   end
 end

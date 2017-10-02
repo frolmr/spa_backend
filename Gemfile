@@ -16,6 +16,7 @@ gem 'knock'
 gem 'kaminari'
 gem 'pg_search'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug', platform: :mri
