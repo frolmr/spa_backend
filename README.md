@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/frolmr/spa_backend.svg?branch=master)](https://travis-ci.org/frolmr/spa_backend)
+[![Code Climate](https://codeclimate.com/github/frolmr/spa_backend/badges/gpa.svg)](https://codeclimate.com/github/frolmr/spa_backend)
 
 # README
 
