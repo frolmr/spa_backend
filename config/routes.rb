@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     end
     scope module: :v2, constraints: ApiConstraints.new(version: 2, default: true) do
       resources :posts
+      get 'user' => 'users#show'
+      post 'update_user' => 'users#update'
     end
   end
 end

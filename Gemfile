@@ -14,8 +14,6 @@ gem 'kaminari'
 gem 'pg_search'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'rollbar'
-gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug', platform: :mri
